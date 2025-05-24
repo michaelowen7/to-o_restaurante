@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toño Restaurante</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #083b33; /* verde oscuro */
+      color: #ffffff; /* blanco */
+    }
+    header {
+      background-color: #083b33;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-width: 200px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #062e27;
+      padding: 10px 0;
+    }
+    nav a {
+      color: #f0c97d; /* dorado cálido */
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .menu-item {
+      background-color: #fff;
+      color: #000;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      background-color: #062e27;
+      text-align: center;
+      padding: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: #f0c97d;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/ruta-a-tu-logo.png" alt="Logo Toño Restaurante" />
+  </header>
+
+  <nav>
+    <a href="#historia">Nuestra Historia</a>
+    <a href="#menu">Menú del Día</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+
+  <section id="historia">
+    <h1>Bienvenido a Toño Restaurante</h1>
+    <p>Un homenaje a la sazón norteña y el legado familiar de un padre cocinero.</p>
+  </section>
+
+  <section id="menu">
+    <h2>Menú del Día</h2>
+    <div class="menu-container" id="menuContainer">
+      <!-- Aquí se insertan dinámicamente los platos -->
+    </div>
+  </section>
+
+  <section id="ubicacion">
+    <h2>Estamos en Surquillo</h2>
+    <p>Ubícanos cerca al Mercado N°1 de Surquillo</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Toño Restaurante</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">📘</a>
+      <a href="https://instagram.com" target="_blank">📸</a>
+      <a href="https://tiktok.com" target="_blank">🎵</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuDelDia = [
+      { nombre: "Seco de cabrito con frejoles", precio: "S/ 20" },
+      { nombre: "Arroz con pato", precio: "S/ 22" },
+      { nombre: "Causa limeña", precio: "S/ 10" },
+      { nombre: "Ají de gallina", precio: "S/ 18" }
+    ];
+
+    const contenedor = document.getElementById('menuContainer');
+    menuDelDia.forEach(plato => {
+      const item = document.createElement('div');
+      item.className = 'menu-item';
+      item.innerHTML = `<h3>${plato.nombre}</h3><p>${plato.precio}</p>`;
+      contenedor.appendChild(item);
+    });
+  </script>
+</body>
+</html>
